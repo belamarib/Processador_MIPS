@@ -1,0 +1,24 @@
+module FunctToShift (
+	input clk,
+	input wire reset,
+	input wire [5:0] Data_0
+);
+
+//000 faz nada
+//001 load no registrador: deve ser um sinal de controle
+//010 shift a esquerda n vezes sll -> 000000
+//011 shift a direita logico n vezes srl -> 000010
+//100 shift a direita aritmetico n vezes sra -> 000011
+//101 rotação a direita n vezes -> n tem na especificação
+//110 rotação a esquerda n vezes -> n tem na especificação
+
+	always@(posedge clk)
+	begin
+	
+	
+	
+	end
+
+
+
+endmodule 

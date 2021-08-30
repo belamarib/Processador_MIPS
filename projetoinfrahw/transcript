@@ -1,0 +1,747 @@
+# Load canceled
+# Compile of Banco_reg.vhd was successful.
+# Compile of cpu.v was successful.
+# Compile of FunctToShift.v was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Load_Size.v was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of MUX_1.v was successful.
+# Compile of MUX_2.v was successful.
+# Compile of MUX_3.v was successful.
+# Compile of MUX_4.v was successful.
+# Compile of MUX_5.v was successful.
+# Compile of MUX_6.v was successful.
+# Compile of MUX_7.v was successful.
+# Compile of MUX_8.v was successful.
+# Compile of MUX_9.v was successful.
+# Compile of MUX_10.v was successful.
+# Compile of MUX_11.v was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of ShiftLeft2A.v was successful.
+# Compile of ShiftLeft2B.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of Store_Size.v was successful.
+# Compile of ula32.vhd was successful.
+# Compile of Banco_reg.vhd was successful with warnings.
+# Compile of cpu.v was successful.
+# Compile of FunctToShift.v was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Load_Size.v was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of MUX_1.v was successful.
+# Compile of MUX_2.v was successful.
+# Compile of MUX_3.v was successful.
+# Compile of MUX_4.v was successful.
+# Compile of MUX_5.v was successful.
+# Compile of MUX_6.v was successful.
+# Compile of MUX_7.v was successful.
+# Compile of MUX_8.v was successful.
+# Compile of MUX_9.v was successful.
+# Compile of MUX_10.v was successful.
+# Compile of MUX_11.v was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of ShiftLeft2A.v was successful.
+# Compile of ShiftLeft2B.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of Store_Size.v was successful.
+# Compile of ula32.vhd was successful.
+# Compile of UnidadeDeControle.v was successful.
+# 25 compiles, 0 failed with no errors.
+# Compile of UnidadeDeControle.v was successful.
+# 25 compiles, 0 failed with no errors.
+# Load canceled
+vsim -gui work.cpu
+# vsim -gui work.cpu 
+# Start time: 23:07:46 on Jul 27,2021
+# Loading work.cpu
+# Loading work.MUX_1
+# Loading work.MUX_2
+# Loading work.MUX_3
+# Loading work.Store_Size
+# Loading work.Load_Size
+# Loading work.MUX_4
+# Loading work.MUX_5
+# Loading work.MUX_8
+# Loading work.MUX_9
+# Loading work.ShiftLeft2A
+# Loading work.ShiftLeft2B
+# Loading work.SignExtend
+# Loading work.MUX_10
+# Loading work.MUX_7
+# Loading work.MUX_6
+# Loading work.FunctToShift
+# Loading work.MUX_11
+# Loading work.UnidadeDeControle
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.registrador(behavioral_arch)
+# Loading ieee.numeric_std(body)
+# Loading lpm.lpm_components
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_device_families(body)
+# Loading lpm.lpm_ram_dq(lpm_syn)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.regdesloc(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (6) for port 'Data_1'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_4.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M4 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 147
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loDiv'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loMult'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (32) for port 'Data_3'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/ShiftLeft2A.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/SL2_A File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 258
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'selector'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_10.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M10 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 276
+# Compile of Banco_reg.vhd was successful.
+# Compile of cpu.v was successful.
+# Compile of FunctToShift.v was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Load_Size.v was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of MUX_1.v was successful.
+# Compile of MUX_2.v was successful.
+# Compile of MUX_3.v was successful.
+# Compile of MUX_4.v was successful.
+# Compile of MUX_5.v was successful.
+# Compile of MUX_6.v was successful.
+# Compile of MUX_7.v was successful.
+# Compile of MUX_8.v was successful.
+# Compile of MUX_9.v was successful.
+# Compile of MUX_10.v was successful.
+# Compile of MUX_11.v was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of ShiftLeft2A.v was successful.
+# Compile of ShiftLeft2B.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of Store_Size.v was successful.
+# Compile of ula32.vhd was successful.
+# Compile of UnidadeDeControle.v was successful.
+# 25 compiles, 0 failed with no errors.
+add wave -position end  sim:/cpu/PC/Clk
+add wave -position end  sim:/cpu/PC/Reset
+add wave -position end  sim:/cpu/PC/Saida
+force -freeze sim:/cpu/PC/Clk 1 0, 0 {50 ps} -r 100
+# ** Warning: (vsim-8780) Forcing /cpu/clk as root of /cpu/PC/Clk specified in the force.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/cpu/BR/Cluster(15)
+add wave -position end  sim:/cpu/BR/Cluster(20)
+add wave -position end  sim:/cpu/BR/Cluster(25)
+add wave -position end  sim:/cpu/Ctrl_Unit/OPCODE
+add wave -position end  sim:/cpu/Ctrl_Unit/STATE
+add wave -position end  sim:/cpu/Ctrl_Unit/COUNTER
+# Break key hit
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Break key hit
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.cpu
+# Loading work.MUX_1
+# Loading work.MUX_2
+# Loading work.MUX_3
+# Loading work.Store_Size
+# Loading work.Load_Size
+# Loading work.MUX_4
+# Loading work.MUX_5
+# Loading work.MUX_8
+# Loading work.MUX_9
+# Loading work.ShiftLeft2A
+# Loading work.ShiftLeft2B
+# Loading work.SignExtend
+# Loading work.MUX_10
+# Loading work.MUX_7
+# Loading work.MUX_6
+# Loading work.FunctToShift
+# Loading work.MUX_11
+# Loading work.UnidadeDeControle
+# Loading work.registrador(behavioral_arch)
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.regdesloc(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (6) for port 'Data_1'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_4.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M4 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 147
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loDiv'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loMult'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (32) for port 'Data_3'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/ShiftLeft2A.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/SL2_A File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 258
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'selector'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_10.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M10 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 276
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/cpu/PC/Clk 1 0, 0 {50 ps} -r 100
+# ** Warning: (vsim-8780) Forcing /cpu/clk as root of /cpu/PC/Clk specified in the force.
+# Break key hit
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (6) for port 'Data_1'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_4.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M4 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 147
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loDiv'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loMult'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (32) for port 'Data_3'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/ShiftLeft2A.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/SL2_A File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 258
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'selector'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_10.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M10 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 276
+# Compile of Banco_reg.vhd was successful.
+# Compile of cpu.v was successful.
+# Compile of FunctToShift.v was successful.
+# Compile of Instr_Reg.vhd was successful.
+# Compile of Load_Size.v was successful.
+# Compile of Memoria.vhd was successful.
+# Compile of MUX_1.v was successful.
+# Compile of MUX_2.v was successful.
+# Compile of MUX_3.v was successful.
+# Compile of MUX_4.v was successful.
+# Compile of MUX_5.v was successful.
+# Compile of MUX_6.v was successful.
+# Compile of MUX_7.v was successful.
+# Compile of MUX_8.v was successful.
+# Compile of MUX_9.v was successful.
+# Compile of MUX_10.v was successful.
+# Compile of MUX_11.v was successful.
+# Compile of RegDesloc.vhd was successful.
+# Compile of Registrador.vhd was successful.
+# Compile of ShiftLeft2A.v was successful.
+# Compile of ShiftLeft2B.v was successful.
+# Compile of SignExtend.v was successful.
+# Compile of Store_Size.v was successful.
+# Compile of ula32.vhd was successful.
+# Compile of UnidadeDeControle.v was successful.
+# 25 compiles, 0 failed with no errors.
+force -freeze sim:/cpu/PC/Clk 1 0, 0 {50 ps} -r 100
+# ** Warning: (vsim-8780) Forcing /cpu/clk as root of /cpu/PC/Clk specified in the force.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position 2  sim:/cpu/PC_in
+# Break key hit
+run
+run
+run
+run
+run
+run
+run
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.cpu
+# Loading work.MUX_1
+# Loading work.MUX_2
+# Loading work.MUX_3
+# Loading work.Store_Size
+# Loading work.Load_Size
+# Loading work.MUX_4
+# Loading work.MUX_5
+# Loading work.MUX_8
+# Loading work.MUX_9
+# Loading work.ShiftLeft2A
+# Loading work.ShiftLeft2B
+# Loading work.SignExtend
+# Loading work.MUX_10
+# Loading work.MUX_7
+# Loading work.MUX_6
+# Loading work.FunctToShift
+# Loading work.MUX_11
+# Loading work.UnidadeDeControle
+# Loading work.registrador(behavioral_arch)
+# Loading work.ram_constants
+# Loading work.memoria(behavioral_arch)
+# Loading work.instr_reg(behavioral_arch)
+# Loading work.regdesloc(behavioral_arch)
+# Loading work.banco_reg(behavioral_arch)
+# Loading work.ula32(behavioral)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (6) for port 'Data_1'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_4.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M4 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 147
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loDiv'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loMult'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (32) for port 'Data_3'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/ShiftLeft2A.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/SL2_A File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 258
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'selector'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_10.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M10 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 276
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (6) for port 'Data_1'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_4.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M4 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 147
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loDiv'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loMult'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (32) for port 'Data_3'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/ShiftLeft2A.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/SL2_A File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 258
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'selector'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_10.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M10 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 276
+force -freeze sim:/cpu/PC/Clk 1 0, 0 {50 ps} -r 100
+# ** Warning: (vsim-8780) Forcing /cpu/clk as root of /cpu/PC/Clk specified in the force.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+run
+run
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (6) for port 'Data_1'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_4.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M4 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 147
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loDiv'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loMult'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (32) for port 'Data_3'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/ShiftLeft2A.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/SL2_A File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 258
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'selector'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_10.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M10 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 276
+force -freeze sim:/cpu/PC/Clk 1 0, 0 {50 ps} -r 100
+# ** Warning: (vsim-8780) Forcing /cpu/clk as root of /cpu/PC/Clk specified in the force.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/cpu/PC/Reset 0 0
+# ** Warning: (vsim-8780) Forcing /cpu/reset as root of /cpu/PC/Reset specified in the force.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (6) for port 'Data_1'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_4.v(6).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M4 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 147
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loDiv'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'loMult'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_9.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M9 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 215
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (32) for port 'Data_3'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/ShiftLeft2A.v(5).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/SL2_A File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 258
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'selector'. The port definition is at: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/MUX_10.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/M10 File: C:/Users/amand/Documents/UFPE/terperiodo/INFRAHARD/projetoinfrahw/cpu.v Line: 276
+force -freeze sim:/cpu/PC/Reset 0 0
+# ** Warning: (vsim-8780) Forcing /cpu/reset as root of /cpu/PC/Reset specified in the force.
+force -freeze sim:/cpu/PC/Clk 1 0, 0 {50 ps} -r 100
+# ** Warning: (vsim-8780) Forcing /cpu/clk as root of /cpu/PC/Clk specified in the force.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/BR
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Three
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_Two
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM_plus_One
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: Unknown intended_device_family UNUSED
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483648 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483645 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483646 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Error: (vsim-86) Argument value -2147483647 is not in bounds of subtype NATURAL.
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 0 ps  Iteration: 1  Instance: /cpu/MEM
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 23:50:39 on Jul 27,2021, Elapsed time: 0:42:53
+# Errors: 11, Warnings: 22

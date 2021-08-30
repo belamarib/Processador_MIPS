@@ -1,0 +1,12 @@
+module MUX_2(
+	input wire [1:0] seletor,
+	input wire [31:0] Data_0, // saída do mux_1 referente a exceções
+	input wire [31:0] Data_1, // valor de PC
+	input wire [31:0] Data_2, // valor de ALUresult
+	input wire [31:0] Data_3, // valor de B
+	output wire [31:0] Data_out
+);
+
+	assign Data_out = seletor[1] ? (seletor[0] ? Data_3 : Data_2) : (seletor[0] ? Data_1 : Data_0);
+
+endmodule 

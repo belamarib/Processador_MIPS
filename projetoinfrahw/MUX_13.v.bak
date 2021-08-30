@@ -1,0 +1,9 @@
+module MUX_13(
+	input wire selector,
+	input wire [2:0] Data_0,
+	output wire [2:0] Data_out
+);
+
+	assign Data_out = (selector) ? Data_0 : 3'b001;
+
+endmodule 

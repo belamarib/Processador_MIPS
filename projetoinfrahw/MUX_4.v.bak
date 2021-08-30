@@ -1,0 +1,8 @@
+module MUX_4 (
+	wire RegDst
+
+);
+
+
+
+endmodule 

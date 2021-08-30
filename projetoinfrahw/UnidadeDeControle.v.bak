@@ -1,0 +1,682 @@
+module UnidadeDeControle (
+	input wire clk,
+	input wire reset,
+    
+	input wire [5:0] OPCODE,
+	input wire [5:0] FUNCT,
+    
+    //flags da ULA (inputs)
+    //sinais de 1 bit (outputs)
+    //sinais de mais de 1 bit (outputs)
+    //sinais dos muxes (outputs)
+	 
+	input wire IR_w; //sinal do instruction register
+	input wire PC_w; //sinal do pc
+	input wire [1:0] IorD_w; //sinal do mux 2
+	input wire M3_w; //sinal do mux 3
+	input wire MemWrite; //sinal da memória
+	input wire RegWrite; //sinal banco de registradores
+	input wire [2:0] MemToReg; //sinal do mux 5
+	input wire LO_w; //sinal para registrador LO
+	input wire HI_w; //sinal para registrador HI
+	input wire M8_w; //sinal do mux 8
+	input wire M9_w; //sinal do mux 9
+	input wire RegA_w; //sinal registrador A
+	input wire RegB_w; //sinal registrador B
+	input wire M10_w; //sinal do mux 10
+	input wire [2:0] ALUSrcB; //sinal do mux 7
+	input wire [1:0] ALUSrcA; //sinal do mux 6
+	input wire ALUOUT_w; //sinal da ALUOUT
+	input wire [2:0] ALUOp; //sinal seletor da ALU
+	input wire ALUOverflow; //sinal de saída da ALU informando overflow aritmético (FLAG)
+	input wire ALUNegativo; //sinal de saída da ALU informando que o resultado é negativo (FLAG)
+	input wire ALUZero; //sinal de saída da ALU sinalizando que o valor que saiu é zero. (FLAG)
+	input wire ALUIgual; //sinal de saída da ALUsinalizando se as entradas são iguais. (FLAG)
+	input wire ALUMaior; //sinal de saída da ALU sinalizando se a entrada A é maior que a entrada B. (FLAG)
+	input wire ALUMenor; //sinal de saída da ALU sinalizando se a entrada A é menor que a entrada B (FLAG)
+	input wire [1:0] PCSource; //sinal para MUX 11
+	input wire EPCWrite; //sinal do EPC
+	input wire [1:0] RegDst; //sinal do mux4
+	input wire MDR_A_w; //sinal do Memory Data Register A
+	input wire MDR_B_w; //sinal do Memory Data Register B
+	input wire [1:0] M1_w; //sinal do mux 1 
+	output reg rst_out //Esse fio é o mesmo do input reset
+
+
+);
+
+
+//Variáveis
+reg [5:0] STATE;
+reg [3:0] COUNTER;
+
+//Estados extras
+parameter ST_COMMON = 6'b000000; //Fetch e decode
+parameter ST_RESET = 6'b000001;
+
+//Estados das instruções do tipo R
+parameter ST_ADD = 6'b000010;
+parameter ST_AND = 6'b000011;
+parameter ST_DIV = 6'b000100;
+parameter ST_MULT = 6'b000101;
+parameter ST_JR = 6'b000110;
+parameter ST_MFHI = 6'b000111;
+parameter ST_MFLO = 6'b001000;
+parameter ST_SLL = 6'b001001;
+parameter ST_SLLV = 6'b001010;
+parameter ST_SLT = 6'b001011;
+parameter ST_SRA = 6'b001100;
+parameter ST_SRAV = 6'b001101;
+parameter ST_SRL = 6'b001110;
+parameter ST_SUB = 6'b001111;
+parameter ST_BREAK = 6'b010000;
+parameter ST_RTE = 6'b010001;
+parameter ST_ADDM = 6'b010010;
+
+//Estados das instruções do tipo I
+parameter ST_ADDI = 6'b010011;
+parameter ST_ADDIU = 6'b010100;
+parameter ST_BEQ = 6'b010101;
+parameter ST_BNE = 6'b010110;
+parameter ST_BLE = 6'b010111;
+parameter ST_BGT = 6'b011000;
+parameter ST_SLLM = 6'b011001;
+parameter ST_LB = 6'b011010;
+parameter ST_LH = 6'b011011;
+parameter ST_LUI = 6'b011100;
+parameter ST_LW = 6'b011101;
+parameter ST_SB = 6'b011110;
+parameter ST_SH = 6'b011111;
+parameter ST_SLTI = 6'b100000;
+parameter ST_SW = 6'b100001;
+
+//Estados das instruções do tipo J
+parameter ST_J = 6'b100010;
+parameter ST_JAL = 6'b100011;
+
+//Estados das exceções
+parameter ST_OPCODE_EXC = 6'b100100; //Opcode inválido
+parameter ST_FUNCT_EXC = 6'b100101; //Funct inválido
+
+
+//Opcode das instruções de tipo R
+parameter TYPE_R = 6'b000000;
+
+//Opcodes das instruções de tipo I
+parameter ADDI = 6'b001000;
+parameter ADDIU = 6'b001001;
+parameter BEQ = 6'b000100;
+parameter BNE = 6'b000101;
+parameter BLE = 6'b000110;
+parameter BGT = 6'b000111;
+parameter SLLM = 6'b000001;
+parameter LB = 6'b100000;
+parameter LH = 6'b100001;
+parameter LUI = 6'b001111;
+parameter LW = 6'b100011;
+parameter SB = 6'b101000;
+parameter SH = 6'b101001;
+parameter SLTI = 6'b001010;
+parameter SW = 6'b101011;
+
+//Opcodes das instruções de tipo J
+parameter J = 6'b000010;
+parameter JAL = 6'b000011;
+
+//Campos funct das instruções de tipo R
+parameter F_ADD = 6'b100000;
+parameter F_AND = 6'b100100;
+parameter F_DIV = 6'b011010;
+parameter F_MULT = 6'b011000;
+parameter F_JR = 6'b001000;
+parameter F_MFHI = 6'b010000;
+parameter F_MFLO = 6'b010010;
+parameter F_SLL = 6'b000000;
+parameter F_SLLV = 6'b000100;
+parameter F_SLT = 6'b101010;
+parameter F_SRA = 6'b000011;
+parameter F_SRAV = 6'b000111;
+parameter F_SRL = 6'b000010;
+parameter F_SUB = 6'b100010;
+parameter F_BREAK = 6'b001101;
+//parameter F_RTE = (não achei funct desse - qualquer coisa a gente inventa)
+parameter F_ADDM = 6'b000101;
+
+
+initial begin
+  rst_out = 1'b1; //Reseta tudo no início
+  //no video ele fala algo sobre colocar o valor 227/277 (?) no registrador 29 (não entendi direito)
+end
+
+always @(posedge clk) begin
+  if (reset == 1'b1) begin 
+    if (STATE != ST_RESET) begin
+      STATE = ST_RESET;
+      //zerar todos os sinais de saída
+      rst_out = 1'b1;
+      COUNTER = 4'b0000;
+    end
+    else begin 
+      STATE = ST_COMMON;
+      //zerar todos os sinais de saída
+      rst_out = 1'b0;
+      COUNTER = 4'b0000;
+    end
+  end
+  else begin 
+    case (STATE)
+        ST_COMMON: begin 
+          if (COUNTER == 4'b0000 || COUNTER == 4'b0001 || COUNTER == 4'b0010) begin 
+            STATE = ST_COMMON; 
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0011) begin 
+            STATE = ST_COMMON;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0100) begin 
+            case (OPCODE)
+              TYPE_R: begin
+                case (FUNCT) 
+                  F_ADD: begin
+                    STATE = ST_ADD;
+                  end
+                  F_AND: begin
+                    STATE = ST_AND;
+                  end
+                  F_DIV: begin
+                    STATE = ST_DIV;
+                  end
+                  F_MULT: begin
+                    STATE = ST_MULT;
+                  end
+                  F_JR: begin
+                    STATE = ST_JR;
+                  end
+                  F_MFHI: begin
+                    STATE = ST_MFHI;
+                  end
+                  F_MFLO: begin
+                    STATE = ST_MFLO;
+                  end
+                  F_SLL: begin
+                    STATE = ST_SLL;
+                  end
+                  F_SLLV: begin
+                    STATE = ST_SLLV;
+                  end
+                  F_SLT: begin
+                    STATE = ST_SLT;
+                  end
+                  F_SRA: begin
+                    STATE = ST_SRA;
+                  end
+                  F_SRAV: begin
+                    STATE = ST_SRAV;
+                  end
+                  F_SRL: begin
+                    STATE = ST_SRL;
+                  end
+                  F_SUB: begin
+                    STATE = ST_SUB;
+                  end
+                  F_BREAK: begin
+                    STATE = ST_BREAK;
+                  end
+                  //F_RTE: begin
+                  //  STATE = ST_RTE;
+                  //end
+                  F_ADDM: begin
+                    STATE = ST_ADDM;
+                  end
+                  default: begin
+                    STATE = ST_FUNCT_EXC;
+                  end
+                endcase
+              end
+              ADDI: begin
+                STATE = ST_ADDI;
+              end
+              ADDIU: begin
+                STATE = ST_ADDIU;
+              end
+              BEQ: begin
+                STATE = ST_BEQ;
+              end
+              BNE: begin
+                STATE = ST_BNE;
+              end
+              BLE: begin
+                STATE = ST_BLE;
+              end
+              BGT: begin
+                STATE = ST_BGT;
+              end
+              SLLM: begin
+                STATE = ST_SLLM;
+              end
+              LB: begin
+                STATE = ST_LB;
+              end
+              LH: begin
+                STATE = ST_LH;
+              end
+              LUI: begin
+                STATE = ST_LUI;
+              end
+              LW: begin
+                STATE = ST_LW;
+              end
+              SB: begin
+                STATE = ST_SB;
+              end
+              SH: begin
+                STATE = ST_SH;
+              end
+              SLTI: begin
+                STATE = ST_SLTI;
+              end
+              SW: begin
+                STATE = ST_SW;
+              end
+              J: begin
+                STATE = ST_J;
+              end
+              JAL: begin
+                STATE = ST_JAL;
+              end
+              default: begin
+                STATE = ST_OPCODE_EXC;
+              end
+            endcase
+            //alterar sinais
+            COUNTER = 4'b0000; 
+          end
+        end
+        ST_ADD: begin 
+          if (COUNTER == 4'b0000) begin
+            STATE = ST_ADD;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0001) begin
+            STATE = ST_ADD;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0010) begin
+            STATE = ST_COMMON;
+            //alterar sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_AND: begin 
+          if (COUNTER == 4'b0000) begin
+            STATE = ST_AND;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0001) begin
+            STATE = ST_AND;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0010) begin
+            STATE = ST_COMMON;
+            //alterar sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_DIV: begin
+          
+        end
+        ST_MULT: begin
+          
+        end
+        ST_JR: begin
+          
+        end
+        ST_MFHI: begin
+          
+        end
+        ST_MFLO: begin
+          
+        end
+        ST_SLL: begin
+          
+        end
+        ST_SLLV: begin
+          
+        end
+        ST_SLT: begin
+          
+        end
+        ST_SRA: begin
+          
+        end
+        ST_SRAV: begin
+          
+        end
+        ST_SRL: begin
+          
+        end
+        ST_SUB: begin
+          if (COUNTER == 4'b0000) begin
+            STATE = ST_SUB;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0001) begin
+            STATE = ST_SUB;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0010) begin
+            STATE = ST_COMMON;
+            //alterar sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_BREAK: begin
+          if (COUNTER == 4'b0000 || COUNTER == 4'b0001) begin
+            STATE = ST_BREAK;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0010) begin
+            STATE = ST_COMMON;
+            //alterar sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        //ST_RTE: begin
+          
+        //end
+        ST_ADDM: begin
+          
+        end
+        ST_ADDI: begin
+          
+        end
+        ST_ADDIU: begin
+          
+        end
+        ST_BEQ: begin
+          
+        end
+        ST_BNE: begin
+          
+        end
+        ST_BLE: begin
+          
+        end
+        ST_BGT: begin
+          
+        end
+        ST_SLLM: begin
+          
+        end
+        ST_LB: begin
+          if (COUNTER == 4'b0000 || COUNTER == 4'b0001 || COUNTER == 4'b0010 || COUNTER == 4'b0011) begin
+            STATE = ST_LB;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0100) begin
+            STATE = ST_LB;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0101) begin
+            STATE = ST_LB;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0110) begin
+            STATE = ST_COMMON;
+            //altera sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_LH: begin
+          if (COUNTER == 4'b0000 || COUNTER == 4'b0001 || COUNTER == 4'b0010 || COUNTER == 4'b0011) begin
+            STATE = ST_LH;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0100) begin
+            STATE = ST_LH;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0101 || COUNTER == 4'b0110) begin
+            STATE = ST_LH;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0111) begin
+            STATE = ST_COMMON;
+            //altera sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_LUI: begin
+          if (COUNTER == 4'b0000 || COUNTER == 4'b0001 || COUNTER == 4'b0010 || COUNTER == 4'b0011) begin
+            STATE = ST_LUI;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0100) begin
+            STATE = ST_LUI;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0101 || COUNTER == 4'b0110) begin
+            STATE = ST_LUI;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0111) begin
+            STATE = ST_LUI;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b1000) begin
+            STATE = ST_COMMON;
+            //altera sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_LW: begin
+          if (COUNTER == 4'b0000 || COUNTER == 4'b0001 || COUNTER == 4'b0010 || COUNTER == 4'b0011) begin
+            STATE = ST_LW;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0100) begin
+            STATE = ST_LW;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0101) begin
+            STATE = ST_LW;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0110) begin
+            STATE = ST_COMMON;
+            //altera sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_SB: begin
+          if (COUNTER == 4'b0000 || COUNTER == 4'b0001 || COUNTER == 4'b0010 || COUNTER == 4'b0011) begin
+            STATE = ST_SB;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0100) begin
+            STATE = ST_SB;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0101) begin
+            STATE = ST_SB;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0110) begin
+            STATE = ST_COMMON;
+            //altera sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_SH: begin
+          if (COUNTER == 4'b0000 || COUNTER == 4'b0001 || COUNTER == 4'b0010 || COUNTER == 4'b0011) begin
+            STATE = ST_SH;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0100) begin
+            STATE = ST_SH;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0101) begin
+            STATE = ST_SH;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0110) begin
+            STATE = ST_COMMON;
+            //altera sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_SLTI: begin
+          if (COUNTER == 4'b0000 || COUNTER == 4'b0001 || COUNTER == 4'b0010 || COUNTER == 4'b0011) begin
+            STATE = ST_SLTI;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0100) begin
+            STATE = ST_SLTI;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0101) begin
+            STATE = ST_SLTI;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0110) begin
+            STATE = ST_COMMON;
+            //altera sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_SW: begin
+          if (COUNTER == 4'b0000 || COUNTER == 4'b0001 || COUNTER == 4'b0010 || COUNTER == 4'b0011) begin
+            STATE = ST_SW;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0100) begin
+            STATE = ST_SW;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0101) begin
+            STATE = ST_SW;
+            //altera sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0110) begin
+            STATE = ST_COMMON;
+            //altera sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_J: begin 
+          if (COUNTER == 4'b0000) begin
+            STATE = ST_J;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0001) begin
+            STATE = ST_COMMON;
+            //alterar sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_JAL: begin 
+          if (COUNTER == 4'b0000) begin
+            STATE = ST_JAL;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0001) begin
+            STATE = ST_JAL;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0010) begin
+            STATE = ST_JAL;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0011) begin
+            STATE = ST_COMMON;
+            //alterar sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_FUNCT_EXC: begin
+          if (COUNTER == 4'b0000) begin
+            STATE = ST_FUNCT_EXC;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0001) begin
+            STATE = ST_FUNCT_EXC;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0010 || COUNTER == 4'b0011 || COUNTER == 4'b0100 || COUNTER == 4'b0101) begin
+            STATE = ST_FUNCT_EXC;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0110) begin
+            STATE = ST_COMMON;
+            //alterar sinais
+            COUNTER = 4'b0000;
+          end
+        end
+        ST_OPCODE_EXC: begin
+          if (COUNTER == 4'b0000 || COUNTER == 4'b0001 || COUNTER == 4'b0010 || COUNTER == 4'b0011) begin
+            STATE = ST_OPCODE_EXC;
+            //alterar sinais
+            COUNTER = COUNTER + 1;
+          end
+          else if (COUNTER == 4'b0100) begin
+            STATE = ST_COMMON;
+            //alterar sinais
+            COUNTER = 4'b0000;
+          end
+        end
+    endcase
+  end
+end
+
+
+
+
+
+
+
+
+
+endmodule 

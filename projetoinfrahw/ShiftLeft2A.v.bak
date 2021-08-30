@@ -1,0 +1,18 @@
+module ShiftLeft2A (
+	input wire [4:0] Data_0, //rs
+	input wire [4:0] Data_1, //rt
+	input wire [15:0] Data_2, //OFFSET
+	input wire [3:0] Data_3, //fio do PC
+	output wire [31:0] Data_out
+);
+	
+	wire [9:0] A1;
+	wire [25:0] A2;
+	wire [27:0] A3;
+	
+	assign A1 = {Data_0, Data_1};
+	assign A2 = {Data_2, A1};
+	assign A3 = {A2, 2'b00};
+	assign Data_out = {Data_3, A3};
+	
+endmodule 

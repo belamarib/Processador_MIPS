@@ -1,0 +1,10 @@
+module MUX_8 (
+	input seletor,
+	input [31:0] hiMult,
+	input [31:0] hiDiv,
+	output  [31:0] HI  
+);
+
+	assign HI = (seletor) ? hiDiv : hiMult;
+
+endmodule 
